@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            AgoraTest
+        </title>
+   
+        <script src="AgoraRTC.js"></script>
+    </head>
+    <body>
+        <script src="AgoraVideoHandler.js"></script>
+        <script>
+        
+            let agHandler = new AgoraVideoHandler();
+            agHandler.joinChannel('test')
+            function sx(){
+               agHandler.createChannel()
+            }
+        </script>
+        <button  onclick="sx()">
+            yo
+        </button>
+    </body>
+</html>
