@@ -16,6 +16,7 @@ async function storeJson(title,symbol,uri,host,cotract_addr, nft_tokent_enc){
         let a= `window.config1 = {"title":"${title}","symbol":"${symbol}","host":"${host}","contract":"${cotract_addr}","symbol":"${symbol}","uri":"${uri}","nft_tokent_enc":"${nft_tokent_enc}"};`;
         //a+= ` window.config = {"title":"${title}","symbol":"${symbol}","host":"${host}","contract":"${cotract_addr}","symbol":"${symbol}","uri":"${uri}","nft_tokent_enc":"${nft_tokent_enc}"};`;
         await ipfsNode.files.write(`/${title}/config.js`, new TextEncoder().encode(a), { parents : true, create: true});
+        await ipfsNode.files.write(`/${title}/admin/config.js`, new TextEncoder().encode(a), { parents : true, create: true});
     }catch(e){
         console.log(e)
         throw("")
